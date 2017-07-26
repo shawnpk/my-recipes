@@ -8,7 +8,7 @@ $navbar-default-bg: #003366;
 }
 
 .jumbotron {
-  background-image: asset-url('macaroons.jpg');
+  background-image: asset-url('cookie.png');
   background-size: cover;
   height: 300px;
 
@@ -17,6 +17,7 @@ $navbar-default-bg: #003366;
     margin-bottom: 30px;
     letter-spacing: -1px;
     font-weight: bold;
+    color: white;
   }
 }
 
