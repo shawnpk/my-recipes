@@ -27,6 +27,7 @@ $navbar-default-bg: #003366;
 
   &:hover {
     color: white;
+    background-color: black;
     text-decoration: none;
   }
 }
@@ -59,4 +60,25 @@ $navbar-default-bg: #003366;
   height: 60px;
   background-color: #f5f5f5;
   line-height: 60px;
+}
+
+.description {
+  margin-top: 0;
+}
+
+
+.well a {
+  color: #003366;
+}
+
+.rounded_corners {
+  border-radius: 4px;
+}
+
+.chef_info {
+  margin-top: 8px;
+}
+
+.colormatch a {
+  color: #003366;
 }
