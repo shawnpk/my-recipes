@@ -2,7 +2,6 @@ class ChefsController < ApplicationController
   before_action :set_chef, only: [:show]
 
   def show
-
   end
 
   def new
