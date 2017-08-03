@@ -53,8 +53,9 @@ $navbar-default-bg: #003366;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
+  height: 100%;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
@@ -89,4 +90,15 @@ $navbar-default-bg: #003366;
   a {
     color: white;
   }
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chef-title {
+  color: #003366;
+  font-weight: bold;
+  font-size: 1.25em;
 }
