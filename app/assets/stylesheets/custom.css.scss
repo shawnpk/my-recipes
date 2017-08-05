@@ -102,3 +102,11 @@ $navbar-default-bg: #003366;
   font-weight: bold;
   font-size: 1.25em;
 }
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+
+  &:hover {
+    color: lightgrey;
+  }
+}
