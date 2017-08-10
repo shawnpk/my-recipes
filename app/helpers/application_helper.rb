@@ -1,6 +1,7 @@
 module ApplicationHelper
   def capitalize_words(words)
-    words.split.map(&:capitalize).join(' ')
+    stop_words = %w{ at by down for from in into like near of off on onto over past to upon with and as but for if nor once or so than that till when yet a an the }
+    words.split.each_with_index.map{|word, index| stop_words.include?(word) && index > 0 ? word : word.capitalize }.join(" ")
   end
 
   def gravatar_for(user, options = { size: 80 })
