@@ -65,7 +65,7 @@ $navbar-default-bg: #003366;
 }
 
 .description {
-  margin-top: 0;
+  margin-top: 1em;
 }
 
 
@@ -162,4 +162,8 @@ $navbar-default-bg: #003366;
   padding-right: 10px;
   padding-top: 1em;
   font-size: 1.05em;
+}
+
+input#recipe_image {
+  margin-top: 8px;
 }

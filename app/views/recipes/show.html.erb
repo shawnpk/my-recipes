@@ -1,15 +1,24 @@
 <%= render 'shared/page_title', title: @recipe.name %>
 
 <div class="well col-md-8 col-md-offset-2">
+  <div align='center'>
+    <%= image_tag @recipe.image.url if @recipe.image? %>
+  </div>
+
   <h4 class="center description">
     <strong>Steps: </strong>
   </h4>
+
   <hr>
+
   <%= simple_format(@recipe.description) %>
+
   <hr>
+
   <% if @recipe.ingredients.any? %>
     <p>Ingredients: <%= render @recipe.ingredients %></p>
   <% end %>
+
   <div class='pull-right'>
     <p class='center'>
       <em>Created by: </em>
@@ -24,6 +33,7 @@
       </div>
     </p>
   </div>
+
   <div class="recipe-actions">
     <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
       <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: 'btn btn-xs btn-warning' %>
@@ -34,6 +44,7 @@
     <% end %>
     <%= link_to "All Recipes", recipes_path, class: 'btn btn-xs btn-primary' %>
   </div>
+
   <div class="liking">
     <div class="">
       <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
@@ -44,18 +55,22 @@
       <% end %> <%= @recipe.thumbs_down_total %>
     </div>
   </div>
+
 </div>
 
 <div class='row'>
   <div class='col-md-8 col-md-offset-2'>
     <% if logged_in? %>
       <h3>Comments:</h3>
+
       <hr>
+
       <%= form_for([@recipe, @comment], remote: true, :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
         <div class='form-group'>
           <div class="control-label col-md-2">
             <%= f.label :description, 'Comment' %>
           </div>
+
           <div class="col-md-8">
             <%= f.text_area :description, class: 'form-control', placeholder: 'Enter comment here', rows: 8 %>
           </div>
@@ -66,8 +81,11 @@
             <%= f.submit 'Submit Comment', class: 'btn btn-primary btn-lg btn-xlarge' %>
           </div>
         </div>
+
       <% end %>
+
     <hr>
+
   <% end %>
   </div>
 </div>
@@ -75,16 +93,21 @@
 <% if @recipe.comments != 0 %>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
+
       <h3>Prior Comments: </h3>
+
       <div id="messages">
         <%= render partial: 'comments/comments', object: @comments %>
       </div>
+
     </div>
   </div>
 <% else %>
   <div class="row">
+
     <div class="col-md-8 col-md-offset-2">
       <h3>No Comments Yet</h3>
     </div>
+    
   </div>
 <% end %>

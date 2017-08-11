@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'hirb', '~> 0.7.3'
+gem 'carrierwave', '~> 1.1'
+gem 'mini_magick', '~> 4.8'
+gem 'fog', '~> 1.41'
